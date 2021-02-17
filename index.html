@@ -216,7 +216,41 @@ righties.forEach(r => r.addEventListener("click", () => {
 
 
 
-console.log("test")
+
+const boundary = document.querySelector("#poem");
+const lines = document.querySelectorAll(".line");
+
+console.log(boundary);
+console.dir(boundary);
+
+const topX = boundary.offsetTop;
+const rightX = boundary.offsetWidth;
+const bottomX = boundary.offsetHeight + topX;
+const leftX = boundary.offsetLeft;
+console.log(topX);
+console.log(rightX);
+console.log(bottomX);
+console.log(leftX);
+
+lines.forEach(l => {
+  console.log(l);
+
+  let topInRange = (l.offsetTop + topX) > boundary.offsetTop;
+  let rightInRange = l.offsetWidth < boundary.offsetWidth;
+  let bottomInRange = l.offsetHeight < boundary.offsetHeight;
+  let leftInRange = (l.offsetLeft + leftX) > boundary.offsetLeft;
+
+  console.log((l.offsetTop + topX), boundary.offsetTop, topInRange);
+  console.log((l.offsetLeft + leftX), boundary.offsetLeft, leftInRange);
+  console.log(l.offsetWidth, boundary.offsetWidth, rightInRange);
+  console.log(l.offsetHeight + l.offsetTop, boundary.offsetHeight, bottomInRange);
+
+  if (leftInRange && rightInRange && topInRange && bottomInRange) {
+    // valuesArray.push(parseInt(l.innerText));
+    console.log(l.innerHTML);
+  }
+
+})
 
 
 
