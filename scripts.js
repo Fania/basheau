@@ -60,26 +60,14 @@ righties.forEach(r => r.addEventListener("click", () => {
 
 
 
-// localStorage.setItem("basheau", "");
+const topChildren = tops.children;
+const midChildren = mids.children;
+const botChildren = bots.children;
+console.log(topChildren);
+console.log(midChildren);
+console.log(botChildren);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+localStorage.setItem("basheau", "1-2-3");
 
 
 
